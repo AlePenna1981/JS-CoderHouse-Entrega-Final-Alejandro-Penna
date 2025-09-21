@@ -5,7 +5,7 @@ function mostrarLibros(libros, tituloBuscado) {
     if (libros.length === 0) {
         Swal.fire({
             text: `No se encontró el título ${tituloBuscado}`,
-            icon: 'question',
+            icon: 'error',
             confirmButtonText: 'Volver'
         });
         return;
