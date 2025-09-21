@@ -19,7 +19,7 @@ function mostrarLibros(libros, tituloBuscado) {
         img.src = libro.portada;
         img.alt = libro.titulo;
 
-        const title = document.createElement("h5");
+        const title = document.createElement("h6");
         title.textContent = libro.titulo;
 
         const author = document.createElement("small");

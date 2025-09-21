@@ -41,9 +41,30 @@ function renderLibro(book) {
 
     const btnBorrar = document.createElement('button');
     btnBorrar.textContent = 'Eliminar';
+
+
     btnBorrar.addEventListener("click", () => {
-        div.remove();
-        eliminarDeStorage(book.titulo);
+
+        Swal.fire({
+            title: "¿Deseas eliminar este título de tu librería?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Sí"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                div.remove();
+                eliminarDeStorage(book.titulo);
+                Swal.fire({
+                    title: "Titulo eliminado",
+                    text: `${book.titulo} ha sido eliminado de tu librería!`,
+                    icon: "success"
+                });
+            }
+        });
+
+
     });
 
     div.appendChild(img);
